@@ -1,3 +1,5 @@
+local abs, sqrt = math.abs, math.sqrt
+
 local Vec = {}
 
 function Vec:new(x,y)
@@ -26,7 +28,7 @@ end
 
 function Vec:distance(i,j)
   local distx, disty = i.x - j.x, i.y - j.y
-  return math.sqrt(distx * distx + disty * disty)
+  return sqrt(distx * distx + disty * disty)
 end
 
 function Vec:invert(i)
@@ -35,6 +37,10 @@ end
 
 function Vec:unpack(i)
   return i.x, i.y
+end
+
+function Vec:abs(i)
+  return Vec:new(abs(i.x),abs(i.y))
 end
 
 return Vec
