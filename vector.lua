@@ -43,4 +43,9 @@ function Vec:abs(i)
   return Vec:new(abs(i.x),abs(i.y))
 end
 
+function Vec:midpoint(i, j)
+  local x, y = i.x - j.x, i.y - j.y
+  return i + x / 2, i + j / 2
+end
+
 return Vec
